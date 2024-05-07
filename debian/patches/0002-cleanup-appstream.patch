@@ -1,0 +1,20 @@
+Author: Tom Jampen <tom@cryptography.ch>
+Description: Removing GNOME-specific, non-official AppStream tag.
+
+diff -Naurp a/utilities/texstudio.metainfo.xml b/utilities/texstudio.metainfo.xml
+--- a/utilities/texstudio.metainfo.xml
++++ b/utilities/texstudio.metainfo.xml
+@@ -32,13 +32,6 @@
+       <image>https://raw.githubusercontent.com/texstudio-org/texstudio/master/utilities/screenshot1.png</image>
+     </screenshot>
+   </screenshots>
+-  <kudos>
+-    <kudo>AppMenu</kudo>
+-    <kudo>HiDpiIcon</kudo>
+-    <kudo>HighContrast</kudo>
+-    <kudo>ModernToolkit</kudo>
+-    <kudo>UserDocs</kudo>
+-  </kudos>
+   <keywords>
+     <keyword>editor</keyword>
+     <keyword translate="no">tex</keyword>

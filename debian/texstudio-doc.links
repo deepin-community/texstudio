@@ -1,0 +1,9 @@
+# symlinking static files from package furo
+/usr/lib/python3/dist-packages/furo/theme/furo/static/scripts/furo.js			/usr/share/doc/texstudio/html/_static/scripts/furo.js
+/usr/lib/python3/dist-packages/furo/theme/furo/static/scripts/gumshoe-patched.js	/usr/share/doc/texstudio/html/_static/scripts/gumshoe-patched.js
+/usr/lib/python3/dist-packages/furo/theme/furo/static/styles/furo.css			/usr/share/doc/texstudio/html/_static/styles/furo.css
+/usr/lib/python3/dist-packages/furo/theme/furo/static/styles/furo-extensions.css	/usr/share/doc/texstudio/html/_static/styles/furo-extensions.css
+
+# symlinking static files from package python3-sphinx-inline-tabs
+/usr/lib/python3/dist-packages/sphinx_inline_tabs/static/tabs.css			/usr/share/doc/texstudio/html/_static/tabs.css
+/usr/lib/python3/dist-packages/sphinx_inline_tabs/static/tabs.js			/usr/share/doc/texstudio/html/_static/tabs.js

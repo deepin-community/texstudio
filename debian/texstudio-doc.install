@@ -1,0 +1,12 @@
+# installing from debian/tmp
+usr/share/texstudio/*template_*.png
+usr/share/texstudio/*template_*.tex
+usr/share/texstudio/*template_*.zip
+usr/share/texstudio/*template_*.js
+usr/share/texstudio/*template_*.json
+usr/share/texstudio/*.html		/usr/share/doc/texstudio/html
+usr/share/texstudio/*.css		/usr/share/doc/texstudio/html
+usr/share/texstudio/*.js		/usr/share/doc/texstudio/html
+usr/share/texstudio/*.png		/usr/share/doc/texstudio/html
+usr/share/texstudio/_images		/usr/share/doc/texstudio/html
+usr/share/texstudio/_static		/usr/share/doc/texstudio/html

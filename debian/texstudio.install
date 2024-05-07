@@ -1,0 +1,7 @@
+# installing from debian/tmp
+usr/bin
+usr/share/metainfo
+usr/share/applications
+usr/share/icons
+usr/share/texstudio/*.badWords
+usr/share/texstudio/*.stopWords*

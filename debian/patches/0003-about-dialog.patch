@@ -1,0 +1,30 @@
+Author: Tom Jampen <tom@cryptography.ch>
+Description:
+ Fixing the wording in the about dialog and displaying the Debian revision
+ instead of the upstream commit id.
+
+diff -Naurp a/cmake/project_version.cmake b/cmake/project_version.cmake
+--- a/cmake/project_version.cmake
++++ b/cmake/project_version.cmake
+@@ -56,6 +56,9 @@ version_split(${PROJECT_VERSION} PROJECT
+ math(EXPR PROJECT_VERSION_INT "${PROJECT_VERSION_MAJOR} * 10000 + ${PROJECT_VERSION_MINOR} * 100 + ${PROJECT_VERSION_PATCH}")
+ 
+ set(ADDITIONAL_DEFINITIONS -DPROJECT_VERSION="${PROJECT_VERSION}" -DPROJECT_VERSION_INT=${PROJECT_VERSION_INT})
++
++set(TEXSTUDIO_GIT_REVISION $ENV{DEB_VERSION})
++
+ if(TEXSTUDIO_GIT_REVISION)
+ 	file(WRITE ${CMAKE_BINARY_DIR}/git_revision.cpp "const char * TEXSTUDIO_GIT_REVISION = \"${TEXSTUDIO_GIT_REVISION}\";")
+ else()
+diff -Naurp a/src/aboutdialog.cpp b/src/aboutdialog.cpp
+--- a/src/aboutdialog.cpp
++++ b/src/aboutdialog.cpp
+@@ -55,7 +55,7 @@ void AboutDialog::setText(QString latest
+     }
+     if (latestVersion=="") latestVersion = tr("couldn't retrieve data");
+     ui.textBrowser->setOpenExternalLinks(true);
+-    ui.textBrowser->setHtml(QString("<b>%1 %2</b> (git %3)").arg(TEXSTUDIO,TXSVERSION,TEXSTUDIO_GIT_REVISION ? TEXSTUDIO_GIT_REVISION : "n/a") + "<br>" +
++    ui.textBrowser->setHtml(QString("<b>%1 %2</b> (Build: %3)").arg(TEXSTUDIO,TXSVERSION,TEXSTUDIO_GIT_REVISION ? TEXSTUDIO_GIT_REVISION : "n/a") + "<br>" +
+                             tr("Using Qt Version %1, compiled with Qt %2 %3").arg(qVersion(),QT_VERSION_STR,COMPILED_DEBUG_OR_RELEASE) + "<br><br>" +
+                             tr("Project home site:") + " <a href=\"https://texstudio.org/\">https://texstudio.org/</a><br>" +
+                             tr("Latest stable version: %1").arg(latestVersion)+"<br>" +

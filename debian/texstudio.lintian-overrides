@@ -1,0 +1,5 @@
+# 'Prefered' cannot be changed as it's the name of a config option
+texstudio: spelling-error-in-binary Prefered Preferred [usr/bin/texstudio]
+
+# 'Teh' appears in image files
+texstudio: spelling-error-in-binary Teh The [usr/bin/texstudio]

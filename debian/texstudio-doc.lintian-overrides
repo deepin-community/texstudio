@@ -1,0 +1,2 @@
+# LaTeX templates are not documentation and thus do not belong in /usr/share/doc
+texstudio-doc: package-contains-documentation-outside-usr-share-doc [usr/share/texstudio/template*.tex]

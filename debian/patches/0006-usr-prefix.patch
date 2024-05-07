@@ -1,0 +1,17 @@
+Author: Tom Jampen <tom@cryptography.ch>
+Description:
+ Adding the correct search path prefix for Debian in order to find the html
+ documentation.
+
+diff -Naurp a/src/utilsSystem.cpp b/src/utilsSystem.cpp
+--- a/src/utilsSystem.cpp
++++ b/src/utilsSystem.cpp
+@@ -146,7 +146,7 @@ QStringList findResourceFiles(const QStr
+ 	// searchFiles<<QCoreApplication::applicationDirPath() + "/data/"+fileName; //windows new
+ 
+ #if !defined(PREFIX)
+-#define PREFIX ""
++#define PREFIX "/usr"
+ #endif
+ 
+ #if defined( Q_WS_X11 ) || defined (Q_OS_LINUX)
