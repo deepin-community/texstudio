@@ -1,0 +1,27 @@
+Author: Tom Jampen <tom@cryptography.ch>
+Description: Avoiding build with removed internal adwaita-qt.
+
+diff -Naur a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -214,13 +214,13 @@
+ 	set(ADDITIONAL_DEFINITIONS ${ADDITIONAL_DEFINITIONS} -DNO_CRASH_HANDLER)
+ endif()
+ 
+-option(TEXSTUDIO_BUILD_ADWAITA "Enable/Disable internal adwaita-qt style" ON)
+-if(TEXSTUDIO_BUILD_ADWAITA)
+-    find_package(Qt${QT_VERSION_MAJOR}DBus REQUIRED)
+-    set(ADDITIONAL_DEFINITIONS ${ADDITIONAL_DEFINITIONS} -DADWAITA)
+-    message(STATUS "integrate adwaita style")
+-endif()
+-add_subdirectory(src/adwaita-qt)
++#option(TEXSTUDIO_BUILD_ADWAITA "Enable/Disable internal adwaita-qt style" ON)
++#if(TEXSTUDIO_BUILD_ADWAITA)
++#    find_package(Qt${QT_VERSION_MAJOR}DBus REQUIRED)
++#    set(ADDITIONAL_DEFINITIONS ${ADDITIONAL_DEFINITIONS} -DADWAITA)
++#    message(STATUS "integrate adwaita style")
++#endif()
++#add_subdirectory(src/adwaita-qt)
+ 
+ option(TEXSTUDIO_ENABLE_TESTS "Enable/Disable internal tests" OFF)
+ if(${TEXSTUDIO_ENABLE_TESTS})

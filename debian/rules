@@ -1,4 +1,61 @@
 #!/usr/bin/make -f
 
+include /usr/share/dpkg/pkg-info.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export QT_SELECT=qt5
+export DEB_VERSION
+
 %:
-	dh $@
+	dh ${@} --with sphinxdoc
+
+override_dh_sphinxdoc:
+	dh_sphinxdoc -X.md.txt -X.rst.txt
+
+override_dh_auto_build:
+	dh_auto_build
+	cd utilities/manual && SPHINXBUILD=/usr/bin/sphinx-build make html
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DTEXSTUDIO_ENABLE_CRASH_HANDLER=OFF \
+	-DTEXSTUDIO_ENABLE_MEDIAPLAYER=ON
+
+override_dh_auto_install:
+	dh_auto_install
+
+	# moving and renaming icons
+	for SIZE in 16x16 22x22 32x32 48x48 64x64 128x128 ; do \
+		mkdir -p debian/tmp/usr/share/icons/hicolor/$$SIZE/apps ; \
+		mv -f utilities/texstudio$$SIZE.png \
+		debian/tmp/usr/share/icons/hicolor/$$SIZE/apps/texstudio.png ; \
+	done
+
+	# removing useless files
+	rm -f debian/tmp/usr/share/texstudio/CHANGELOG.txt
+	rm -f debian/tmp/usr/share/texstudio/CHANGELOG.md
+	rm -f debian/tmp/usr/share/texstudio/COPYING
+	rm -f debian/tmp/usr/share/texstudio/AUTHORS
+
+	# removing static files included in Debian package furo
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/scripts/*.js
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/styles/*.css
+
+	# removing static files included in Debian package python3-sphinx-inline-tabs
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/tabs.*
+
+	# removing static files not used in the documentation
+	rm -rf debian/tmp/usr/share/texstudio/_sphinx_design_static
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/basic.css
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/debug.css
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/skeleton.css
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/file.png
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/minus.png
+	rm -f debian/tmp/usr/share/doc/texstudio/html/_static/plus.png
+
+override_dh_gencontrol:
+	dh_gencontrol -- -Vbuilt:Using="$(shell dpkg-query \
+	-f '$${source:Package} (= $${source:Version}), ' \
+	-W python3-sphinx-design python3-pygments)"
+
+override_dh_installchangelogs:
+	dh_installchangelogs utilities/manual/source/CHANGELOG.md

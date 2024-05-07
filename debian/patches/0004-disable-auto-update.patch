@@ -1,0 +1,61 @@
+Author: Tom Jampen <tom@cryptography.ch>
+Description:
+ This patch sets the auto update configuration value to false by default and
+ disables the update checkbox, the corresponding time interval, the "Check Now"
+ button and the update level.
+
+diff -Naurp a/src/configdialog.ui b/src/configdialog.ui
+--- a/src/configdialog.ui
++++ b/src/configdialog.ui
+@@ -507,6 +507,9 @@
+                  <layout class="QGridLayout" name="gridLayout03">
+                   <item row="0" column="6">
+                    <widget class="QComboBox" name="comboBoxUpdateLevel">
++                    <property name="enabled">
++                     <bool>false</bool>
++                    </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+@@ -551,6 +554,9 @@
+                   </item>
+                   <item row="1" column="3">
+                    <widget class="QPushButton" name="pushButtonUpdateCheckNow">
++                    <property name="enabled">
++                     <bool>false</bool>
++                    </property>
+                     <property name="text">
+                      <string>Check Now</string>
+                     </property>
+@@ -585,6 +591,9 @@
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QSpinBox" name="spinBoxAutoUpdateCheckIntervalDays">
++                    <property name="readOnly">
++                     <bool>true</bool>
++                    </property>
+                     <property name="suffix">
+                      <string> days</string>
+                     </property>
+@@ -598,6 +607,9 @@
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QCheckBox" name="checkBoxAutoUpdateCheck">
++                    <property name="checkable">
++                     <bool>false</bool>
++                    </property>
+                     <property name="text">
+                      <string>Automatically check every</string>
+                     </property>
+diff -Naurp a/src/configmanager.cpp b/src/configmanager.cpp
+--- a/src/configmanager.cpp
++++ b/src/configmanager.cpp
+@@ -509,7 +509,7 @@ ConfigManager::ConfigManager(QObject *pa
+     registerOption("Macros/RepositoryURL", &URLmacroRepository, "https://api.github.com/repos/texstudio-org/texstudio-macro/contents/", nullptr);
+ 
+ 	//updates
+-	registerOption("Update/AutoCheck", &autoUpdateCheck, true, &pseudoDialog->checkBoxAutoUpdateCheck);
++	registerOption("Update/AutoCheck", &autoUpdateCheck, false, &pseudoDialog->checkBoxAutoUpdateCheck);
+ 	registerOption("Update/UpdateLevel", &updateLevel, 0, &pseudoDialog->comboBoxUpdateLevel);
+ 	registerOption("Update/AutoCheckInvervalDays", &autoUpdateCheckIntervalDays, 7, &pseudoDialog->spinBoxAutoUpdateCheckIntervalDays);
+ 	registerOption("Update/LastCheck", &lastUpdateCheck, QDateTime());

@@ -1,5 +1,1055 @@
-template-repository (1.0-1) unstable; urgency=medium
+texstudio (4.7.2+ds-2) unstable; urgency=medium
 
-  * Initial release
+  * Improving version handling for Built-Using field (Closes: #1063609).
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 10 Feb 2024 11:07:30 +0100
+
+texstudio (4.7.2+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 4.7.2+ds (Closes: #1062084).
+  * Updating year in copyright file.
+  * Updating excluded files in copyright file.
+  * Adding new upstream files images-ng/colibre/* to copyright file.
+  * Fixing path to src/pdfviewer/synctex/* in copyright file.
+  * Updating to standards version 4.6.2, no changes needed.
+  * Mentioning new translation (de_CH) in control file.
+  * Updating build dependencies as upstream changed the build system from
+    qmake to cmake.
+  * Updating build dependencies as upstream switched from phonon to
+    qtmultimedia.
+  * Improving description in control file.
+  * Declaring Rules-Requires-Root: no in control file.
+  * Removing no longer needed configure flag for detecting system
+    hunspell.
+  * Removing no longer needed configure flag for detecting system quazip.
+  * Removing no longer needed configure flag for enabling the internal
+    terminal.
+  * Removing no longer needed configure flag for disabling internal tests.
+  * Activating qtmultimedia instead of phonon with configure flag.
+  * Updating configure flag for deactivating the internal crash handler.
+  * Updating path for icon installating in rules file.
+  * Removing no longer needed override for dh_compress.
+  * No longer generating and installing a CREDITS file.
+  * Removing no longer needed build dependency on adwaita-qt.
+  * Removing no longer needed adwaita-qt export in rules.
+  * Switching from obsolete pkg-config to pkgconf.
+  * Switching from libquazip5-dev to libquazip1-qt5-dev.
+  * Updating changelog filename and path in rules file.
+  * Removing new CHANGELOG.md file from /usr/share/texstudio in rules.
+  * Removing no longer working workaround to set Debian revision in about
+    dialog from rules file.
+  * Exporting DEB_VERSION in rules for use in about dialog.
+  * Regenerating 01-fix-desktop.patch.
+  * Updating 02-cleanup-appstream.patch.
+  * Updating 03-about-dialog.patch.
+  * Updating 04-disable-auto-update.patch.
+  * Removing no longer needed 05-removed-upstream-files.patch for old
+    build system.
+  * Removing no longer needed 06-adwaita-qt.patch for old build system.
+  * Adding 05-adwaita-qt.patch in order to avoid building with removed
+    internal adwaita-qt.
+  * Adding 06-usr-prefix.patch in order to define the correct PREFIX for
+    Debian.
+  * Adding 07-privacy-breach.patch in order to fix privacy breach in
+    latex2e html documentation.
+  * Renumbering patches to four leading digits.
+  * Removing incorrect lintian override for texstudio-doc.
+  * Adding lintian override for latex2e.html as no source is missing.
+  * Removing doc-base files.
+  * Adding build dependencies for new upstream sphinx documentation.
+  * Adding dh_auto_build override for building new upstream sphinx
+    documentation.
+  * Installing new html documentation.
+  * Building with dh_sphinxdoc.
+  * Adding ${sphinxdoc:Depends} for texstudio-doc in control file.
+  * Overriding dh_spinxdoc in order to exclude files.
+  * Adding Built-Using field for texstudio-doc using ${sphinxdoc:Built-
+    Using} variable.
+  * Adding furo as a dependency for texstudio-doc.
+  * Symlinking static documentation files from furo.
+  * Adding python3-sphinx-inline-tabs as a dependency for texstudio-doc.
+  * Symlinking static documentation files from python3-sphinx-inline-tabs.
+  * Adding python3-sphinx-design to Built-Using field.
+  * Adding python3-pygments to Built-Using field.
+  * Removing unused static documentation files.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitattributes file
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory
+    - unused dictionary and thesaurus files
+    - unused utilities/FileAssociation.nsh file
+    - unused utilities/installscript.qs file
+    - unused utilities/manual/build directory
+    - unused utilities/manual/make.bat file
+    - unused utilities/qxs/doc directory
+    - unused utilities/texstudio*.nsi files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+    - obsolete usermanual files
+
+ -- Tom Jampen <tom@cryptography.ch>  Wed, 07 Feb 2024 15:09:56 +0100
+
+texstudio (4.3.1+ds-3) unstable; urgency=medium
+
+  * Adding src/git_revision.cpp to debian/clean (Closes: #1047194).
+
+ -- Tom Jampen <tom@cryptography.ch>  Mon, 04 Sep 2023 19:20:53 +0200
+
+texstudio (4.3.1+ds-2) unstable; urgency=medium
+
+  * Updating build dependency due to the qtermwidget transition (Closes:
+    #1025377).
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 04 Dec 2022 18:23:11 +0100
+
+texstudio (4.3.1+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 4.3.1+ds.
+  * Updating year in copyright file.
+  * Mentioning new translation (si) in control file.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Regenerating 06-adwaita-qt.patch.
+  * Renumbering patches.
+  * Updating syntax in lintian-overrides files.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitattributes file
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml* files
+    - unused dictionary and thesaurus files
+    - unused utilities/installscript.qs
+    - unused utilities/texstudio*.nsi
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 10 Sep 2022 19:19:12 +0200
+
+texstudio (4.2.3+ds-2) unstable; urgency=medium
+
+  * No longer installing deprecated texstudio.xpm, thanks to Pino Toscano
+    <pino@debian.org> for the patch (Closes: #1010419).
+  * Updating to standards version 4.6.1, no changes needed.
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 21 May 2022 19:42:16 +0200
+
+texstudio (4.2.3+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 4.2.3+ds.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml* files
+    - unused dictionary and thesaurus files
+    - unused utilities/installscript.qs
+    - unused utilities/texstudio*.nsi
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 17 Apr 2022 11:26:37 +0200
+
+texstudio (4.2.2+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 4.2.2+ds.
+  * Excluding upstream files in copyright file.
+  * Switching to debhelper compat level 13.
+  * Removing override_dh_missing from rules file as --fail-missing is now
+    the default behavior.
+  * Removing redundant build dependency.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml* files
+    - unused dictionary and thesaurus files
+    - unused utilities/installscript.qs
+    - unused utilities/texstudio*.nsi
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 03 Mar 2022 17:01:08 +0100
+
+texstudio (4.2.1+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 4.2.1+ds.
+  * Updating years in copyright file.
+  * Adding new upstream files fontawesome5/*.svg to copyright file.
+  * Updating texstudio.metainfo.xml in copyright file.
+  * Excluding upstream files in copyright file.
+  * Mentioning new translations (ie, nb_NO, ug) in control file.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Regenerating 02-fix-desktop.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Updating 04-about-dialog.patch.
+  * Renaming 05-cleanup-appdata.patch to 05-cleanup-appstream.patch.
+  * Updating 05-cleanup-appstream.patch.
+  * Regenerating 06-adwaita-qt.patch.
+  * Removing --as-needed linker flag as it is no longer needed.
+  * Adding libpoppler-cpp-dev and qtdeclarative5-dev as a build-
+    dependency.
+  * Updating lintian-override in texstudio-doc.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml* files
+    - unused dictionary and thesaurus files
+    - unused utilities/installscript.qs
+    - unused utilities/texstudio-msys.nsi
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 17 Feb 2022 15:22:14 +0100
+
+texstudio (3.0.4+ds-2) unstable; urgency=medium
+
+  * Updating to standards version 4.6.0, no changes needed.
+  * Adding libqtermwidget5-0-dev as a build-dependency, needed for
+    TeXstudio's internal terminal.
+  * Activating TeXstudio's internal terminal.
+  * Adding libphonon4qt5-dev as a build-dependency.
+  * Building with phonon support.
+  * Removing no longer needed missing-sources for quazip.
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 14 Oct 2021 21:09:19 +0200
+
+texstudio (3.0.4+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 3.0.4+ds.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 08 Jan 2021 07:34:43 +0100
+
+texstudio (3.0.2+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 3.0.2+ds.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Updating 04-about-dialog.patch.
+  * Regenerating 06-adwaita-qt.patch.
+  * Updating to standards version 4.5.1, no changes needed.
+  * Improving lintian override for LaTeX templates.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused .github directory
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Mon, 04 Jan 2021 21:47:43 +0100
+
+texstudio (3.0.1+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 3.0.1.+ds.
+  * Updating repacksuffix in watch file.
+  * Removing 06-libhunspell.patch, fixed upstream.
+  * Removing 07-libquazip5.patch, fixed upstream.
+  * Improving adwaita-qt integration for multiarch support.
+  * Simplifying and renumbering 06-adwaita-qt.patch.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 05 Sep 2020 12:26:12 +0200
+
+texstudio (3.0.0+ds-1) unstable; urgency=medium
+
+  * Merging upstream version 3.0.0+ds.
+  * Updating watch file to respect new source version extension +ds.
+  * Mentioning new translation (ca) in control file.
+  * No longer moving appdata file to the correct location, fixed upstream.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Adding 06-libhunspell.patch in order to use system hunspell.
+  * Adding 07-libquazip5.patch in order to use system quazip5.
+  * Adding 08-adwaita-qt.patch in order to use adwaita-qt instead of
+    built-in adwaita.
+  * Building texstudio with system adwaita.
+  * Adding adwaita-qt as a build-dependency.
+  * Adding adwaita-qt to texstudio recommends.
+  * Excluding upstream adwaita-qt files in copyright file.
+  * Adding false positive package-contains-documentation-outside-usr-
+    share-doc warning to lintian overrides.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/adwaita-qt directory
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 04 Sep 2020 06:31:09 +0200
+
+texstudio (2.12.22+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.22+debian.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 30 Jan 2020 11:14:13 +0100
+
+texstudio (2.12.20+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.20+debian.
+  * Updating to standards version 4.5.0, no changes needed.
+  * Updating year in copyright file.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 30 Jan 2020 09:54:15 +0100
+
+texstudio (2.12.18+debian-1) unstable; urgency=medium
+
+  * Closing bug #931657 in changelog.
+  * Merging upstream version 2.12.18+debian.
+  * Updating 01-removed-upstream-files.patch.
+  * Mentioning new translations (pt, sk) in control file.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 30 Jan 2020 08:49:08 +0100
+
+texstudio (2.12.16+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.16+debian (Closes: #931657).
+  * Regenerating 01-removed-upstream-files.patch.
+  * Adding 05-cleanup-appdata.patch in order to remove non-official
+    AppStream tag from upstream appdata.xml.
+  * Adding texstudio.appdata.xml to copyright file.
+  * Mentioning new translations (br, sv) in control file.
+  * Removing no longer needed dh_strip override for dbgsym-migration in
+    rules file.
+  * Removing no longer needed option --parallel from rules file.
+  * Removing no longer present option --fail-missing from dh_install in
+    rules file.
+  * Switching to debhelper compat level 12.
+  * Adding override for dh_missing to rules file.
+  * Updating to standards version 4.4.1, no changes needed.
+  * Adding false positive privacy-breach warning to lintian overrides.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 16 Nov 2019 20:13:54 +0100
+
+texstudio (2.12.14+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.14+debian.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 11 Dec 2018 14:43:21 +0100
+
+texstudio (2.12.12+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.12+debian.
+  * Updating year in debian/copyright.
+  * Mentioning new translations (id_ID) in control file.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Removing 04-quazip-qt5.patch, fixed upstream.
+  * Renumbering patches.
+  * Adding missing info to previous changelog entry.
+  * Removing custom compression in source/options.
+  * Removing custom compression in rules.
+  * Updating to standards version 4.2.1, no changes needed.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 08 Dec 2018 22:12:52 +0100
+
+texstudio (2.12.10+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.10+debian.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Regenerating 04-quazip-qt5.patch.
+  * Updating 05-about-dialog.patch.
+  * Excluding upstream files in copyright file.
+  * Improving version mangle in watch file.
+  * Removing obsolete entry from lintian-overrides.
+  * Mentioning new translations (ko, ko_KR) in control file.
+  * Updating to standards version 4.2.0, no changes needed.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 14 Aug 2018 13:20:02 +0200
+
+texstudio (2.12.8+debian-2) unstable; urgency=medium
+
+  * Mentioning additional languages (ar and ru_RU) in control file.
+  * Adding files-excluded and comment field to copyright file.
+  * Removing no longer used get-orig-source target from rules file.
+  * Improving watch file to support repacking and recompressing the
+    upstream tarball.
+  * Updating and improving watch file as upstream has moved to github.
+  * Updating source field in copyright.
+  * Updating homepage field in control file.
+  * Updating to standards version 4.1.4, no changes needed.
+  * Listing Debian revision in about dialog instead of empty upstream git
+    revision.
+  * Adding 05-about-dialog.patch in order to fix the wording in the about
+    dialog as we display the Debian revision instead of the upstream
+    commit id.
+
+ -- Tom Jampen <tom@cryptography.ch>  Wed, 20 Jun 2018 07:33:43 +0200
+
+texstudio (2.12.8+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.8+debian.
+  * Moving to watch file version 4 and sf redirector.
+  * Updating watch file to recognize new upstream releases.
+  * Updating rules file to reflect upstream paths changes.
+  * Updating file paths in copyright file due to upstream changes.
+  * Updating changelog according to upstream changes.
+  * Updating year in copyright file.
+  * Updating 01-removed-upstream-files.patch.
+  * Updating 02-fix-desktop.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Regenerating 04-quazip-qt5.patch.
+  * Removing 05-update-appdata-file.patch, applied upstream.
+  * Removing package latex-beamer from suggests as this package no longer
+    exists (Closes: #893946).
+  * Specifying needed libhunspell-dev version (at least 1.5.1) due to upstream
+    changes.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - conflicting .gitignore file
+    - unused src/hunspell directory
+    - unused src/pdfviewer/include_win32 directory
+    - unused src/pdfviewer/include_win32_qt5 directory
+    - unused src/quazip directory
+    - unused qt translations
+    - unused travis-ci directory and .travis.yml file
+    - unused dictionary and thesaurus files
+    - unused utilities/TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 01 May 2018 18:23:31 +0200
+
+texstudio (2.12.6+debian-2) unstable; urgency=medium
+
+  * Updating 04-quazip-qt5.patch in order to specify the correct path for
+    quazip5 in texstudio.pro (Closes: #886572).
+  * Updating to standards version 4.1.3.
+
+ -- Tom Jampen <tom@cryptography.ch>  Mon, 08 Jan 2018 22:27:36 +0100
+
+texstudio (2.12.6+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.12.6+debian.
+  * Updating 01-removed-upstream-files.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Regenerating 04-quazip-qt5.patch.
+  * Adding new upstream files minisplitter.* to copyright file.
+  * Updating years in copyright file.
+  * Moving from http:// to https:// url in copyright file.
+  * Updating to standards version 4.1.0.
+  * Moving from -dbg package to automatically created -dbgsym packages.
+  * Adding Multi-Arch field in control file according to the multiarch hinter.
+  * Mentioning new translations (fa, tr_TR) in control file.
+  * Adding 05-update-appdata-file.patch for updating texstudio.appdata.xml
+    to the latest format specified by freedesktop.org.
+  * Fixing installation location of texstudio.appdata.xml
+    (/usr/share/metainfo instead of /usr/share/appdata).
+  * Updating texstudio.install to install /usr/share/metainfo.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused pdfviewer/include_win32 directory
+    - unused pdfviewer/include_win32_qt5 directory
+    - unused qt translations
+    - unused quazip directory
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 26 Sep 2017 17:08:16 +0200
+
+texstudio (2.11.2+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.11.2+debian.
+  * Regenerating 01-removed-upstream-files.patch.
+  * Regenerating 04-quazip-qt5.patch.
+  * Adding new upstream files flowlayout.* to copyright file.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused pdfviewer/include_win32 directory
+    - unused pdfviewer/include_win32_qt5 directory
+    - unused qt translations
+    - unused quazip directory
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 23 Oct 2016 19:37:11 +0200
+
+texstudio (2.11.0+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.11.0+debian.
+  * Updating get-orig-source target in rules to no longer include quazip.
+  * Adding build dependency on libquazip5-dev.
+  * Removing no longer included quazip from copyright file.
+  * Adding new upstream folder libqmarkedscrollbar to copyright file.
+  * Improving variable handling for disabling the TeXstudio crash handler
+    and tests in rules.
+  * Adding variable for building TeXstudio against Debian's libhunspell in
+    rules.
+  * Adding variable for building TeXstudio against Debian's libquazip in
+    rules.
+  * Enable hardening options in rules.
+  * Removing 01-use-libhunspell.patch as upstream's build process now
+    supports using Debian's libhunspell.
+  * Regenerating 02-removed-upstream-files.patch.
+  * Regenerating 04-disable-auto-update.patch.
+  * Reordering patches.
+  * Adding 04-quazip-qt5.patch in order to build against the qt5 version
+    of libquazip.
+  * Mentioning new translation (nl) in control file.
+  * Updating to standards version 3.9.8, no changes needed.
+  * Adding lintian-overrides in order to prevent false positives.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused pdfviewer/include_win32 directory
+    - unused pdfviewer/include_win32_qt5 directory
+    - unused qt translations
+    - unused quazip directory
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 26 Jun 2016 11:53:55 +0200
+
+texstudio (2.10.8+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.10.8+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Regenerating 02-removed-upstream-files.patch.
+  * Regenerating 04-disable-auto-update.patch.
+  * Updating copyright file to reflect upstream changes.
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 06 Feb 2016 21:26:19 +0100
+
+texstudio (2.10.6+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.10.6+debian.
+  * Updating 01-use-libhunspell.patch to only change hunspell related
+    behavior.
+  * Updating and renaming 02-no-qt-translations.patch in order to
+    completely remove files from texstudio.pro deleted from the upstream
+    tarball.
+  * Updating 03-fix-desktop.patch.
+  * Updating 04-disable-auto-update.patch to also disable the update level
+    chooser and the "Check Now" button.
+  * Updating get-orig-source target in rules file to handle unneeded files
+    moved to a subdirectory within the upstream tarball.
+  * Changing years in copyright file to reflect upstream changes.
+  * Updating file locations in copyright file to reflect moved source
+    code.
+  * Mentioning additional translations in control file.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused pdfviewer/include_win32 directory
+    - unused pdfviewer/include_win32_qt5 directory
+    - unused qt translations
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 28 Jan 2016 13:23:54 +0100
+
+texstudio (2.10.4+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.10.4+debian.
+  * Updating 01-use-libhunspell.patch.
+  * Updating 02-no-qt-translations.patch.
+  * Updating 04-disable-auto-update.patch.
+  * Updating year in copyright file.
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 12 Jan 2016 22:44:10 +0100
+
+texstudio (2.10.2+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.10.2+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Regenerating 04-no-qt-translations.patch.
+  * Reordering patches.
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 22 Sep 2015 07:56:48 +0200
+
+texstudio (2.10.0+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.10.0+debian.
+  * Updating 01-use-libhunspell.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Updating 04-no-qt-translations.patch.
+  * Removing 05-fix-mercurial-revision.patch, included upstream.
+  * Updating copyright file to match source code changes.
+  * Updating rules file to reflect new changelog location.
+  * Removing no longer used lintian-override.
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 13 Sep 2015 21:19:38 +0200
+
+texstudio (2.9.4+debian-3) unstable; urgency=medium
+
+  * Updating texstudio's svg dependency for qt5 (Closes: #786455).
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 26 May 2015 21:58:42 +0200
+
+texstudio (2.9.4+debian-2) unstable; urgency=medium
+
+  * Updating rules to select qt5 for building.
+  * Updating build dependencies to build with qt5.
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 15 May 2015 19:31:22 +0200
+
+texstudio (2.9.4+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.9.4+debian.
+  * Regenerating 03-disable-auto-update.patch.
+  * Removing 05-use-libsynctex.patch as TeXstudio includes a modified
+    version of the synctex parser.
+  * Removing libsynctex-dev from Build-Depends as TeXstudio includes a
+    modified version of the synctex parser.
+  * Removing 06-fix-silent-file-saving.patch, fixed upstream.
+  * Adding 05-fix-mercurial-revision.patch in order to prevent TeXstudio's
+    mercurial revision from being empty.
+  * Updating year in copyright file.
+  * Updating quazip's copyright information.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused include_win32 directory
+    - unused include_win32_qt5 directory
+    - unused qt translations
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 08 May 2015 06:42:01 +0200
+
+texstudio (2.8.8+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.8.8+debian (Closes: #774084).
+  * Updating 01-use-libhunspell.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Regenerating 04-no-qt-translations.patch.
+  * Regenerating 05-use-libsynctex.patch.
+  * Regenerating 06-fix-silent-file-saving.patch.
+  * Updating year in copyright file.
+  * Removing doc-base registration for usermanual-fr, as the french
+    version has been removed upstream.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused include_win32 directory
+    - unused include_win32_qt5 directory
+    - unused qt translations
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Wed, 29 Apr 2015 20:35:43 +0200
+
+texstudio (2.8.4+debian-3) unstable; urgency=medium
+
+  * Adding 06-fix-silent-file-saving.patch in order to prevent data loss
+    (Closes: #770721).
+
+ -- Tom Jampen <tom@cryptography.ch>  Wed, 03 Dec 2014 14:05:12 +0200
+
+texstudio (2.8.4+debian-2) unstable; urgency=medium
+
+  * Updating to standards version 3.9.6, no changes needed.
+  * Switching to default xz compression in source/options.
+  * Adding needed Replaces and Breaks fields for texstudio-doc and
+    texstudio-l10n in order to allow upgrading from wheezy due to splitting
+    the texstudio binary package (Closes: #768158).
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 06 Nov 2014 14:39:02 +0100
+
+texstudio (2.8.4+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.8.4+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Updating 04-no-qt-translations.patch to also exclude qt_pl.qm.
+  * Regenerating 05-use-libsynctex.patch.
+  * Updating package description to include new polish translations.
+  * Switching to default xz compression level in rules.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused include_win32 directory
+    - unused include_win32_qt5 directory
+    - unused qt translations
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Wed, 10 Sep 2014 07:36:27 +0200
+
+texstudio (2.8.2+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.8.2+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Updating 02-fix-desktop.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Regenerating 04-no-qt-translations.patch.
+  * Regenerating 05-use-libsynctex.patch.
+  * Updating year in copyright file.
+  * Removing texstudio.svg from install file, fixed upstream.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused include_win32 directory
+    - unused include_win32_qt5 directory
+    - unused qt translations
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Mon, 18 Aug 2014 06:45:11 +0200
+
+texstudio (2.8.0+debian-2) unstable; urgency=medium
+
+  * Fixing wrong date in changelog.
+  * Enabling --as-needed linking.
+  * Adding dependency on libqt4-svg as texstudio heavily uses svg icons (LP:
+    #1332508).
+  * Fixing capitalization error in package description.
+  * Simplifying install files by removing unneeded destination directories.
+
+ -- Tom Jampen <tom@cryptography.ch>  Wed, 30 Jul 2014 06:29:41 +0200
+
+texstudio (2.8.0+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.8.0+debian.
+  * Updating 01-use-libhunspell.patch.
+  * Improving 03-disable-auto-update.patch to not only uncheck but disable the
+    auto update checkbox.
+  * Regenerating 04-no-qt-translations.patch.
+  * Removing no longer needed 05-fix-poppler-qt5-path.patch.
+  * Enabling parallel building, thanks to Pino Toscano <pino@debian.org> for
+    the patch (Closes: #752269).
+  * Improving get-orig-source target in rules file.
+  * Updating get-orig-source target in rules file to remove unneeded new
+    include_win32_qt5 directory from upstream tarball.
+  * Adding AppStream support by installing upstream texstudio.appdata.xml.
+  * Adding texstudio-doc and texstudio-l10n to texstudio's recommends.
+  * Adding lintian-overrides for false positive and unfixable typo.
+  * Updating years in copyright file.
+  * Adding build dependency on libsynctex-dev.
+  * Adding 05-use-libsynctex.patch in order to use libsynctex instead of
+    embedded synctex files, thanks to Sebastian Ramacher <sramacher@debian.org>
+    for the patch (Closes: #753806).
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused hunspell directory
+    - unused include_win32 directory
+    - unused include_win32_qt5 directory
+    - unused qt translations
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 11 Jul 2014 12:31:23 +0200
+
+texstudio (2.7.0+debian-2) unstable; urgency=medium
+
+  * Moving html documentation and latex templates to separate package.
+  * Moving texstudio translations to separate package.
+  * Adding missing sources for minified and combined quazip/doc/html/jquery.js.
+  * Updating 02-fix-desktop.patch to add keywords entry to the desktop file.
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 22 Apr 2014 16:44:02 +0200
+
+texstudio (2.7.0+debian-1) unstable; urgency=medium
+
+  * Merging upstream version 2.7.0+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Regenerating 04-no-qt-translations.patch.
+  * Regenerating 05-fix-poppler-qt5-path.patch.
+  * Fixing wrong license information for quazip in copyright file.
+  * Updating year in copyright file.
+  * Adding license information for the new latex reference manual to copyright
+    file.
+  * Updating the doc-base registration for the latex reference manual to point
+    to the new html file.
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 18 Apr 2014 10:30:15 +0200
+
+texstudio (2.6.6+debian-1) unstable; urgency=low
+
+  * Merging upstream version 2.6.6+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Regenerating 03-disable-auto-update.patch.
+  * Adding 04-no-qt-translations.patch to remove qt translation files from
+    texstudio.pro.
+  * Adding 05-fix-poppler-qt5-path.patch to fix poppler-qt5 path in
+    texstudio.pro.
+  * Adding missing moderncv templates to copyright file.
+  * Updating license information for qtsingleapplication due to upstream
+    changes.
+  * Sorting copyright file alphabetically.
+  * Registering upstream html documentation with doc-base.
+  * Updating to standards version 3.9.5.
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 22 Nov 2013 11:08:21 +0100
+
+texstudio (2.6.2+debian-2) unstable; urgency=low
+
+  * Disabling the buggy texstudio crash handler in order to allow building
+    on several archs (Closes: #705820).
+
+ -- Tom Jampen <tom@cryptography.ch>  Thu, 15 Aug 2013 14:27:43 +0200
+
+texstudio (2.6.2+debian-1) unstable; urgency=low
+
+  * Merging upstream version 2.6.2+debian.
+  * Removing 04-string-format-security.patch, fixed upstream.
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 11 Aug 2013 17:30:34 +0200
+
+texstudio (2.6.0+debian-1) unstable; urgency=low
+
+  * Merging upstream version 2.6.0+debian:
+    - Fixes FTBFS on several architectures ("error: 'REG_EIP' was not declared
+      in this scope") (Closes: #705820).
+  * Regenerating 01-use-libhunspell.patch.
+  * Updating 02-fix-desktop.patch to also remove no longer needed encoding
+    line.
+  * Fixing indentation in 03-disable-auto-update.patch.
+  * Adding 04-string-format-security.patch in order to fix a format-
+    security compile error.
+  * Removing fix for wrong permissions of spanish TeXstudio translation
+    file from rules.
+  * Adding new files in directory quazip to copyright file.
+  * Adding zipped latex templates to texstudio.install file.
+  * Adding get-orig-source target to rules file.
+  * Overriding dh_auto_configure in order to suppress automated tests when
+    starting TeXstudio after installing/upgrading (LP: #1154261).
+
+ -- Tom Jampen <tom@cryptography.ch>  Tue, 18 Jun 2013 22:18:36 +0200
+
+texstudio (2.5.2+debian-1) experimental; urgency=low
+
+  * Merging upstream version 2.5.2+debian.
+  * Regenerating 01-use-libhunspell.patch.
+  * Regenerating 02-fix-desktop.patch.
+  * Removing 03-fix-manpage-version.patch, fixed upstream.
+  * Removing 04-mythes-path.patch, included upstream.
+  * Removing 05-gcc4.7.patch, included upstream.
+  * Removing 06-fix-auto-bibtex.patch, fixed upstream.
+  * Removing 07-disable-auto-bibtex-option.patch, fixed upstream with new
+    tex build system.
+  * Removing 08-change-default-quickbuild-option.patch, fixed upstream
+    with new tex build system.
+  * Removing 09-trim-commands.patch, fixed upstream.
+  * Removing 10-disable-riddle.patch, fixed upstream by displaying a
+    useful text instead of the riddle.
+  * Adding 03-disable-auto-update.patch in order to prevent automatic
+    TeXstudio updates.
+  * Correcting line break in control file.
+  * Updating to standards version 3.9.4.
+  * Installing uncompressed css files for TeXstudio's user manual.
+  * Installing files for designating language specific words in TeXstudio
+    that shouldn't be used.
+  * Installing files containing language specific words that are
+    designated as a repetition error in TeXstudio only if they are placed
+    directly next to each other.
+  * Installing latex template files to /usr/share/texstudio, needed for
+    new template mechanism.
+  * Fixing watch file as proposed by Bart Martens <bartm@debian.org>, but
+    keeping version mangle.
+  * Fixing wrong permissions of spanish TeXstudio translation file.
+  * Updating year in copyright file.
+  * Adding new TeXstudio authors to copyright file.
+  * Fixing typo in old changelog entry.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused include_win32 directory
+    - unused hunspell directory
+    - unused dictionary and thesaurus files
+    - unused TexTablet directory
+    - unused poppler-data directory
+
+ -- Tom Jampen <tom@cryptography.ch>  Mon, 18 Mar 2013 11:19:14 +0100
+
+texstudio (2.3+debian-4) unstable; urgency=low
+
+  * Adding patch to prevent needless latex run when no bib-files are referenced
+    (Closes: #688558).
+  * Adding patch to set the default value of "automatically run 'latex, bibtex,
+    latex' if bib-files were changed" to disabled.
+  * Adding patch to make 'pdflatex, viewpdf' the default quick build option.
+  * Adding patch to prevent the config file from growing by unnecessary
+    whitespace.
+  * Adding patch to disable the riddle asked when accessing advanced
+    configuration options.
+
+ -- Tom Jampen <tom@cryptography.ch>  Sat, 20 Oct 2012 12:21:07 +0200
+
+texstudio (2.3+debian-3) unstable; urgency=low
+
+  * Adding build-dependency on zlib1g-dev (Closes: #678583).
+
+ -- Tom Jampen <tom@cryptography.ch>  Sun, 24 Jun 2012 13:26:15 +0200
+
+texstudio (2.3+debian-2) unstable; urgency=low
+
+  * Fixing typo in source URL in copyright file.
+  * Improving watch file.
+  * Adding build-dependency on pkg-config (Closes: #675497).
+
+ -- Tom Jampen <tom@cryptography.ch>  Fri, 15 Jun 2012 21:03:17 +0200
+
+texstudio (2.3+debian-1) unstable; urgency=low
+
+  * Initial release.
+  * Rebuilding upstream tarball without:
+    - conflicting debian directory
+    - unused include_win32 directory
+    - unused hunspell directory
+    - unused dictionary and thesaurus files
+
+ -- Tom Jampen <tom@cryptography.ch>  Mon, 14 May 2012 16:36:52 +0200

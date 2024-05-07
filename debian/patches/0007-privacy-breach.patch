@@ -1,0 +1,14 @@
+Author: Tom Jampen <tom@cryptography.ch>
+Description: Removing the privacy breach in latex2e.html.
+
+diff -Naurp a/utilities/latex2e.html b/utilities/latex2e.html
+--- a/utilities/latex2e.html
++++ b/utilities/latex2e.html
+@@ -51,7 +51,6 @@ into another language, under the above c
+ <link href="#Top" rel="start" title="Top">
+ <link href="#Index" rel="index" title="Index">
+ <link href="#SEC_Contents" rel="contents" title="Table of Contents">
+-<link href="https://tug.org/texinfohtml/" rel="up" title="(dir)">
+ <link href="#About-this-document" rel="next" title="About this document">
+ <style type="text/css">
+ <!--
