@@ -1,3 +1,9 @@
+texstudio (4.7.2+ds-2deepin1) unstable; urgency=medium
+
+  * No source changed, just rebuild
+
+ -- Cryolitia <liziyao@uniontech.com>  Mon, 28 Apr 2025 10:25:15 +0800
+
 texstudio (4.7.2+ds-2) unstable; urgency=medium
 
   * Improving version handling for Built-Using field (Closes: #1063609).
